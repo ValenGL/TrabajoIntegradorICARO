@@ -1,0 +1,31 @@
+{{ isAdmin }} - Role
+<mat-toolbar class="toolbar">
+  <mat-toolbar-row class="toolbar__container tracking-in-contract">
+    <a title="Desk Monster" href="#"
+      ><h1 class="toolbar__container--title tracking-in-contract">
+        Desk Monster
+      </h1></a
+    >
+    <a title="Desk Monster" href="#"
+      ><img
+        class="toolbar__container--logo"
+        src="../../../assets/images/DeskMonster.svg"
+        alt="Logo"
+    /></a>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="toolbar__container--menu">
+    <a mat-button [routerLink]="'/login'">Login</a>
+    <a mat-button>Logout</a>
+    <a mat-button [routerLink]="'/admin'">Admin</a>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <button (click)="isAdmin = !isAdmin">Change</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<ng-template #viewAdmin>
+  <button mat-icon-button (click)="onToggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</ng-template>

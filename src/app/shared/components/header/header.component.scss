@@ -1,0 +1,105 @@
+a {
+  color: #ccc9dc;
+  text-decoration: none;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(0deg, #212121, #111);
+}
+
+.toolbar__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &--title {
+    font-size: 200%;
+    font-family: "Reggae One", cursive;
+    transition: all 0.25s ease-in;
+    &:hover {
+      filter: drop-shadow(0rem 0rem 0.1rem #ccc9dc);
+    }
+  }
+
+  &--logo {
+    height: 4rem;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      height: 4rem;
+      filter: drop-shadow(0rem 0rem 0.3rem #ccc9dc);
+      animation: vibrate 1s infinite;
+    }
+  }
+}
+
+@keyframes vibrate {
+  0% {
+    transform: translate(0);
+  }
+  10% {
+    transform: translate(-2px, -2px);
+  }
+  20% {
+    transform: translate(2px, -2px);
+  }
+  30% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(2px, 2px);
+  }
+  50% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, -2px);
+  }
+  70% {
+    transform: translate(-2px, 2px);
+  }
+  80% {
+    transform: translate(-2px, -2px);
+  }
+  90% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.tracking-in-contract {
+  animation: tracking-in-contract 2s;
+}
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 550px) {
+  .toolbar__container--title {
+    font-size: 150%;
+  }
+
+  .toolbar__container--logo {
+    height: 3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .toolbar__container--title {
+    font-size: 100%;
+  }
+}
