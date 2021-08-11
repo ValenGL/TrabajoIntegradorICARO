@@ -16,7 +16,7 @@
   <ng-container *ngIf="!isAdmin; else viewAdmin">
     <mat-toolbar-row class="toolbar__container--menu">
       <a mat-button [routerLink]="'/login'">Login</a>
-      <a mat-button>Logout</a>
+      <a mat-button (click)="onLogout()">Logout</a>
       <a mat-button [routerLink]="'/admin'">Admin</a>
     </mat-toolbar-row>
   </ng-container>
