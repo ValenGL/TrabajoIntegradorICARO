@@ -1,6 +1,10 @@
 <div class="loginBG">
   <div class="login__container--BG">
-    <form class="login__container">
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onLogin()"
+      class="login__container"
+    >
       <mat-form-field class="login__container--item" appearance="outline">
         <mat-label>Usuario</mat-label>
         <input
