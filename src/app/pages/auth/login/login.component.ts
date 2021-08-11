@@ -19,13 +19,7 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-    const userData = {
-      username: 'valentin@gmail.com',
-      password: '12345678',
-    };
-    this.authSvc.login(userData).subscribe((res) => console.log('Login'));
-  }
+  ngOnInit(): void {}
 
   onLogin(): void {
     const formValue = this.loginForm.value;
