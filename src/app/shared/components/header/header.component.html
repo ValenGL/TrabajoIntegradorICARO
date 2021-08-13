@@ -12,27 +12,23 @@
         alt="Logo"
     /></a>
   </mat-toolbar-row>
-  <ng-container *ngIf="!isAdmin; else viewAdmin">
-    <mat-toolbar-row class="toolbar__container--menu">
-      <a *ngIf="!isLogged; else viewLogout" mat-button routerLink="/login"
-        >Login</a
-      >
+  <!-- FIN BARRA NOMBRE Y LOGO -->
 
-      <a mat-button routerLink="/admin">Admin</a>
-    </mat-toolbar-row>
+  <ng-container *ngIf="isAdmin == 'admin'">
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
   </ng-container>
-</mat-toolbar>
 
-<button mat-icon-button (click)="onToggleSidenav()">
-  <mat-icon>menu</mat-icon>
-</button>
+  <mat-toolbar-row class="toolbar__container--menu">
+    <a *ngIf="!isLogged; else viewLogout" mat-button routerLink="/login"
+      >Login</a
+    >
+
+    <a *ngIf="isAdmin == 'admin'" mat-button routerLink="/admin">Admin</a>
+  </mat-toolbar-row>
+</mat-toolbar>
 
 <ng-template #viewLogout>
   <a mat-button (click)="onLogout()">Logout</a>
-</ng-template>
-
-<ng-template #viewAdmin>
-  <button mat-icon-button (click)="onToggleSidenav()">
-    <mat-icon>menu</mat-icon>
-  </button>
 </ng-template>

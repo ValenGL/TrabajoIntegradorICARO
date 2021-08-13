@@ -1,4 +1,5 @@
-export type Roles = 'READER' | 'ADMIN';
+export type Roles = 'READER' | 'ADMIN' | null;
+// ojo con este null!
 
 export interface User {
   username: string;
@@ -10,4 +11,12 @@ export interface UserResponse {
   token: string;
   userId: number;
   role: Roles;
+}
+
+export interface UserRegister {
+  username: string;
+  password: string;
+  role: string;
+  country: string;
+  city: string;
 }
