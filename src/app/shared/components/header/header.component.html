@@ -1,4 +1,3 @@
-{{ isAdmin }} - Role
 <mat-toolbar class="toolbar">
   <mat-toolbar-row class="toolbar__container tracking-in-contract">
     <a title="Desk Monster" href="#"
@@ -15,20 +14,22 @@
   </mat-toolbar-row>
   <ng-container *ngIf="!isAdmin; else viewAdmin">
     <mat-toolbar-row class="toolbar__container--menu">
-      <a mat-button [routerLink]="'/login'">Login</a>
-      <a mat-button (click)="onLogout()">Logout</a>
-      <a mat-button [routerLink]="'/admin'">Admin</a>
+      <a *ngIf="!isLogged; else viewLogout" mat-button routerLink="/login"
+        >Login</a
+      >
+
+      <a mat-button routerLink="/admin">Admin</a>
     </mat-toolbar-row>
   </ng-container>
-
-  <mat-toolbar-row>
-    <button (click)="isAdmin = !isAdmin">Change</button>
-  </mat-toolbar-row>
 </mat-toolbar>
 
 <button mat-icon-button (click)="onToggleSidenav()">
   <mat-icon>menu</mat-icon>
 </button>
+
+<ng-template #viewLogout>
+  <a mat-button (click)="onLogout()">Logout</a>
+</ng-template>
 
 <ng-template #viewAdmin>
   <button mat-icon-button (click)="onToggleSidenav()">

@@ -15,23 +15,31 @@
         <mat-icon [ngStyle]="{ color: 'white' }" matSuffix
           >account_circle</mat-icon
         >
+        <mat-error *ngIf="isValidField('username')">
+          {{ getErrorMessage("username") }}
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field class="login__container--item" appearance="outline">
         <mat-label>Contraseña</mat-label>
         <input
+          [type]="hide ? 'password' : 'text'"
           matInput
-          type="password"
           formControlName="password"
           placeholder="Ingrese su Contraseña"
-          minlength="8"
         />
-        <mat-icon matSuffix>password</mat-icon>
-        <mat-hint> Mín 8 caracteres </mat-hint>
+        <button mat-icon-button matSuffix (click)="hide = !hide">
+          <mat-icon>{{ hide ? "visibility_off" : "visibility_on" }}</mat-icon>
+        </button>
+        <mat-error *ngIf="isValidField('password')">
+          {{ getErrorMessage("password") }}
+        </mat-error>
       </mat-form-field>
 
       <div class="login__container--btn">
-        <button mat-flat-button type="submit">Iniciar sesión</button>
+        <button [disabled]="loginForm.invalid" mat-flat-button type="submit">
+          Iniciar sesión
+        </button>
       </div>
     </form>
   </div>
