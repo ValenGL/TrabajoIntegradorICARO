@@ -55,9 +55,9 @@ export class LoginComponent implements OnInit, OnDestroy {
       message = 'Debes ingresar un valor.';
     } else if (this.loginForm.get(field)!.hasError('pattern')) {
       message = 'No es un email valido.';
-    } else if (this.loginForm.get(field)!.hasError('minLength')) {
+    } else if (this.loginForm.get(field)!.hasError('minlength')) {
       const minLength =
-        this.loginForm.get(field)!.errors?.minLength.requiredLength;
+        this.loginForm.get(field)!.errors?.minlength.requiredLength;
       message = `Al menos ${minLength} caracteres.`;
     }
     return message;
