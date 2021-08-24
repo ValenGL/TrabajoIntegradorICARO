@@ -45,7 +45,7 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem('user');
     this.loggedIn.next(false);
-    this.router.navigate(['/login']);
+    this.router.navigate(['']);
   }
 
   private checkToken(): void {

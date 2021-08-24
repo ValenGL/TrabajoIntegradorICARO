@@ -42,12 +42,16 @@ export class RegisterComponent {
 
   onSubmit() {
     const username = this.registerForm.value.username;
+    const firstname = this.registerForm.value.firstName;
+    const lastname = this.registerForm.value.lastName;
     const password = this.registerForm.value.password;
     const role = 'reader';
     const country = this.registerForm.value.country;
     const city = this.registerForm.value.city;
     const userData = {
       username: username,
+      lastname: lastname,
+      firstname: firstname,
       password: password,
       role: role,
       country: country,
