@@ -35,7 +35,7 @@ export class RegisterComponent {
         city: ['', [Validators.required]],
       },
       {
-        validator: ConfirmedValidator('password', 'passwordconfirm'),
+        validator: ConfirmedValidator('password', 'confirmPassword'),
       }
     );
   }

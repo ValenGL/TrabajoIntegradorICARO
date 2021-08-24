@@ -1,0 +1,18 @@
+.notFound {
+  color: #ccc9dc;
+  background-color: #08090d;
+  background-image: url(/../assets/images/BGnotfound.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 77.7vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+}
+
+#e404 {
+  font-family: "Reggae One", cursive;
+  font-size: 300%;
+}

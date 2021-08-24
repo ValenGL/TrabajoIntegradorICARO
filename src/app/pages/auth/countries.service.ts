@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Country } from '../models/country';
+import { Country } from '../../shared/models/country';
 
 @Injectable({
   providedIn: 'root',

@@ -1,2 +1,19 @@
-<h1 *ngIf="authSvc.isLogged | async">Welcome,user!</h1>
-<p>home works!</p>
+<span *ngIf="authSvc.isLogged | async">
+  <div class="homeBG">
+    <div class="homeTab">
+      <mat-tab-group>
+        <div class="homeTab__section">
+          <mat-tab label="Recibidos">
+            <app-inbox></app-inbox>
+          </mat-tab>
+        </div>
+
+        <div class="homeTab__section">
+          <mat-tab label="Enviados">
+            <app-outbox></app-outbox>
+          </mat-tab>
+        </div>
+      </mat-tab-group>
+    </div>
+  </div>
+</span>

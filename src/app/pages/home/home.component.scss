@@ -1,0 +1,18 @@
+.homeBG {
+  background-color: #08090d;
+  color: #ccc9dc;
+  background-image: url(./../../../assets/images/BGhome.jpg);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+  display: flex;
+  justify-content: center;
+}
+
+.homeTab {
+  border-radius: 15px;
+  margin: 3rem;
+  width: 100rem;
+}
