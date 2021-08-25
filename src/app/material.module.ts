@@ -8,8 +8,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 const myModules = [
   MatToolbarModule,
@@ -21,8 +23,10 @@ const myModules = [
   MatTabsModule,
   MatSelectModule,
   MatTableModule,
-  MatSidenavModule,
   MatListModule,
+  MatDialogModule,
+  MatPaginatorModule,
+  MatSidenavModule,
 ];
 
 @NgModule({

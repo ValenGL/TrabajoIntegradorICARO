@@ -5,6 +5,7 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { AuthService } from '@auth/auth.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -20,27 +21,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   private destroy$ = new Subject<any>();
 
-  @Output() toggleSidenav = new EventEmitter<void>();
-
   constructor(private authSvc: AuthService) {}
 
   ngOnInit(): void {
     this.authSvc.isLogged
       .pipe(takeUntil(this.destroy$))
       .subscribe((res) => (this.isLogged = res));
-
-    this.authSvc.isAdmin$
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((res) => (this.isAdmin = res));
   }
 
   ngOnDestroy(): void {
     this.destroy$.next({});
     this.destroy$.complete();
-  }
-
-  onToggleSidenav(): void {
-    this.toggleSidenav.emit();
   }
 
   onLogout() {

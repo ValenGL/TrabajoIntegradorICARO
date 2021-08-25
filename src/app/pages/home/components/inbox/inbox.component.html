@@ -1,28 +1,36 @@
-<table
-  mat-table
-  [dataSource]="dataSource"
-  class="mat-elevation-z8 mensajes-table"
->
-  <ng-container matColumnDef="remitente">
-    <th mat-header-cell *matHeaderCellDef>Remitente</th>
-    <td mat-cell *matCellDef="let element">{{ element.remitente }}</td>
-  </ng-container>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mensajes-table">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
 
-  <ng-container matColumnDef="destinatario">
-    <th mat-header-cell *matHeaderCellDef>Destinatarios</th>
-    <td mat-cell *matCellDef="let element">{{ element.destinatario }}</td>
-  </ng-container>
+    <ng-container matColumnDef="sender">
+      <th mat-header-cell *matHeaderCellDef>Sender</th>
+      <td mat-cell *matCellDef="let element">{{ element.sender }}</td>
+    </ng-container>
 
-  <ng-container matColumnDef="fecha">
-    <th mat-header-cell *matHeaderCellDef>Fecha</th>
-    <td mat-cell *matCellDef="let element">{{ element.fecha }}</td>
-  </ng-container>
+    <ng-container matColumnDef="messagges">
+      <th mat-header-cell *matHeaderCellDef>Messagge</th>
+      <td mat-cell *matCellDef="let element">{{ element.messagges }}</td>
+    </ng-container>
 
-  <ng-container matColumnDef="mensaje">
-    <th mat-header-cell *matHeaderCellDef>Mensaje</th>
-    <td mat-cell *matCellDef="let element">{{ element.mensaje }}</td>
-  </ng-container>
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    class="containerB"
+    [length]="50"
+    [pageSize]="5"
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+  >
+  </mat-paginator>
+</div>

@@ -2,7 +2,7 @@
   background-color: #08090d;
   color: #ccc9dc;
   background-image: url(./../../../assets/images/BGhome.jpg);
-  min-height: 100vh;
+  min-height: 78vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -15,4 +15,8 @@
   border-radius: 15px;
   margin: 3rem;
   width: 100rem;
+}
+
+.redactarContainer {
+  padding: 3rem;
 }

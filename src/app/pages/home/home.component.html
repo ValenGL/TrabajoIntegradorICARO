@@ -1,19 +1,33 @@
-<span *ngIf="authSvc.isLogged | async">
-  <div class="homeBG">
-    <div class="homeTab">
-      <mat-tab-group>
-        <div class="homeTab__section">
-          <mat-tab label="Recibidos">
-            <app-inbox></app-inbox>
-          </mat-tab>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    <app-compose></app-compose>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <span *ngIf="authSvc.isLogged | async">
+      <div class="homeBG">
+        <div class="redactarContainer">
+          <a mat-mini-fab (click)="sidenav.toggle()"
+            ><mat-icon>create</mat-icon>
+          </a>
         </div>
 
-        <div class="homeTab__section">
-          <mat-tab label="Enviados">
-            <app-outbox></app-outbox>
-          </mat-tab>
+        <div class="homeTab">
+          <mat-tab-group>
+            <div class="homeTab__section">
+              <mat-tab label="Recibidos">
+                <app-inbox></app-inbox>
+              </mat-tab>
+            </div>
+
+            <div class="homeTab__section">
+              <mat-tab label="Enviados">
+                <app-outbox></app-outbox>
+              </mat-tab>
+            </div>
+          </mat-tab-group>
         </div>
-      </mat-tab-group>
-    </div>
-  </div>
-</span>
+      </div>
+    </span>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,24 +1,19 @@
-export interface ReceivedMesagges{
-  sender: string,
-  msjs: string,
-  date: Date,
-  msjId:number
+export interface ReceivedMesagges {
+  sender: string;
+  messagge: string;
+  date: Date;
+  messaggeId: number;
 }
 
-
-export interface SendedMessagges{
-  addressee: string,
-  msjs: string,
-  date: Date,
-  msjId:number
+export interface SendedMessagges {
+  address: string;
+  messagge: string;
+  date: Date;
+  messaggeId: number;
 }
 
-export interface NewMessage{
-  sender: string,
-  addressee: string,
-  msjs: string,
-
-
+export interface NewMessage {
+  sender: string;
+  address: string;
+  messagge: string;
 }
-
-

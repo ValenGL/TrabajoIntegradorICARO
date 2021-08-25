@@ -14,20 +14,16 @@
   </mat-toolbar-row>
   <!-- FIN BARRA NOMBRE Y LOGO -->
 
-  <ng-container *ngIf="isAdmin == 'admin'">
-    <button mat-icon-button (click)="onToggleSidenav()">
-      <mat-icon>menu</mat-icon>
-    </button>
-  </ng-container>
-
   <mat-toolbar-row class="toolbar__container--menu">
     <a *ngIf="!isLogged; else viewLogout" mat-button routerLink="">Login</a>
     <a *ngIf="!isLogged" mat-button routerLink="/register">Register</a>
-
-    <a *ngIf="isAdmin == 'admin'" mat-button routerLink="/admin">Admin</a>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <ng-template #viewLogout>
   <a mat-button (click)="onLogout()">Logout</a>
+</ng-template>
+
+<ng-template #viewSidenav>
+  <!-- ACA VA EL TOGGLE DEL SIDENAV PARA REDACTAR -->
 </ng-template>
